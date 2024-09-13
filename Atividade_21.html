@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        var modelos = ["fusca", "gol", "uno", "vectra", "peugeot"]
+        var consumos = [7, 10, 12.5, 9, 14.5]
+        var precoGasolina = 2.25
+        var economico = 0, relatorio = "Relatório Final:\n"
+
+        for (var valores_lista = 0; valores_lista < modelos.length; valores_lista++) {
+            var litros = (1000 / consumos[valores_lista]).toFixed(1)
+            var custo = (litros * precoGasolina).toFixed(2)
+            relatorio += (valores_lista + 1) + " - " + modelos[valores_lista] + " - " + consumos[valores_lista] + " - " + litros + " litros - R$ " + custo + "\n"
+            
+            if (consumos[valores_lista] > consumos[economico]) economico = valores_lista
+        }
+
+        alert(relatorio)
+        alert("O menor consumo é do " + modelos[economico] + ".")
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
